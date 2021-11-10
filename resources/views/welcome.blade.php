@@ -40,10 +40,16 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>ahmed</td>
-            <td>01221585306</td>
-        </tr>
+        @forelse($contacts as $contact)
+            <tr>
+                <td>{{ $contact['name'] }}</td>
+                <td>{{ $contact['mobile'] }}</td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="2" class="text-center">No contacts to view</td>
+            </tr>
+        @endforelse
         </tbody>
     </table>
 </section>
